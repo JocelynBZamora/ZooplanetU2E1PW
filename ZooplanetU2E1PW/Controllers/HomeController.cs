@@ -51,11 +51,11 @@ namespace ZooplanetU2E1PW.Controllers
                     Descripcion = Especie.Observaciones ?? "No hay observaciones",
                     Habitad = Especie.Habitat ?? "No se encontro habitad",
                     Id = Especie.Id,
-                    TipoEspecie = Especie.IdClaseNavigation.Nombre
+                    TipoEspecie = Especie.IdClaseNavigation.Nombre ?? " "
                 };
             return View(animal);
             }
-            else { return View(); }
+            else { return RedirectToAction("Index"); }
         }
     }
 }
