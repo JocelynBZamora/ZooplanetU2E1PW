@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "Layout";
+}
+@model ZooplanetU2E1PW.Models.ViewModels.Especie
+
+
+
+<div class="especieficha1">
+    <img src="~/especies/@(Model.Id).jpg" />
+    <div>
+        <h1>@Model.Nombre</h1>
+        <p><label>Clase:</label><a href="~/Home/especies?id=@Model.TipoEspecie">@Model.TipoEspecie</a></p>
+        <p><label>Peso:</label>@Model.Peso</p>
+        <p><label>Tamaño:</label>@Model.Tamaño</p>
+        <p><label>Habitat:</label>@Model.Habitad</p>
+        <p><label>Descripción:</label>@Model.Descripcion</p>
+        <p></p>
+    </div>
+
+    <a href="~/Home/especies">Regresar</a>
+</div>

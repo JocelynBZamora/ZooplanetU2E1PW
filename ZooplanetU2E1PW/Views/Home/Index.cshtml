@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "Layout";
+}
+@model ZooplanetU2E1PW.Models.ViewModels.IndexViewModel
+        <div class="slides">
+            <img src="~/images/carousel1.jpg" />
+        </div>
+
+        <h1>Clasificación de los vertebrados</h1>
+
+        <div class="clases">
+            @foreach(var e in Model.animales)
+            {
+            <div>
+                <a href="~/Home/Especies?Id=@e.Nombre">
+                    <img src="~/clases/@(e.Id).jpg" />
+                    <h1>@e.Nombre</h1>
+                    <p>@e.Descripcion</p>
+                </a>
+            </div>
+            }
+        </div>
+

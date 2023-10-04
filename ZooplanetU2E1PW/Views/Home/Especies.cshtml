@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "Layout";
+}
+@model ZooplanetU2E1PW.Models.ViewModels.EspeciesViewModel
+
+
+<h1>
+    <img src="~/clases/@(Model.Id).png" /> @Model.Nombre
+</h1>
+
+<div class="listaEspecies2">
+    @foreach (var p in Model.espes)
+    {
+        <a href="~/Home/Especie?Id=@p.Nombre">
+            <img src="~/especies/@(p.Id).jpg" title="@p.Nombre" />
+        </a>
+    }
+</div>
+
+<script>
+
+    var c = document.querySelector("main h1 img").cloneNode();
+    document.querySelector("main h1").appendChild(c);
+</script>
