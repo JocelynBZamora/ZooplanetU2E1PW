@@ -24,7 +24,7 @@ namespace ZooplanetU2E1PW.Controllers
         {
             AnimalesContext context = new();
             EspeciesViewModel vm = new();
-            var ListaEspecies = context.Especies.Where(x => x.IdClaseNavigation.Nombre == Id).
+            var ListaEspecies = context.Especies.Where(x => (x.IdClaseNavigation != null ? x.IdClaseNavigation.Nombre : " ") == Id).
                 Select(x => new Espe
                 {
                     Id = x.Id,
@@ -51,7 +51,7 @@ namespace ZooplanetU2E1PW.Controllers
                     Descripcion = Especie.Observaciones ?? "No hay observaciones",
                     Habitad = Especie.Habitat ?? "No se encontro habitad",
                     Id = Especie.Id,
-                    TipoEspecie = Especie.IdClaseNavigation.Nombre ?? " "
+                    TipoEspecie = Especie.IdClaseNavigation != null ? Especie.IdClaseNavigation.Nombre ?? " Sin nombre" : "Sin nombre"
                 };
             return View(animal);
             }

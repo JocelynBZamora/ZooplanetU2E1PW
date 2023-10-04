@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Nombre { get; set; } = null!;
-        public List<Espe> espes { get; set; }
+        public List<Espe> espes { get; set; } = null!;
     }
     public class Espe
     {

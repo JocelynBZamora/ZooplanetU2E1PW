@@ -2,7 +2,7 @@
 {
     public class EspecieViewModel
     {
-        List<Especie> especie { get; set; }
+        List<Especie> especie { get; set; } = null!;
     }
     public class Especie 
     {
